@@ -1,0 +1,7 @@
+<li>
+    <mat-form-field appearance="fill">
+      <mat-label>Digite seu nome</mat-label>
+      <input matInput [(ngModel)]="valor">
+    </mat-form-field>
+  </li>
+<button mat-raised-button (click)="openDialog(valor)">Open Dialog</button>
