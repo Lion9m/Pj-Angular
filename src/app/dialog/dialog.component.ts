@@ -4,6 +4,8 @@ import { DialogExempleComponent } from '../dialog-exemple/dialog-exemple.compone
 
 
 
+
+
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
@@ -11,12 +13,15 @@ import { DialogExempleComponent } from '../dialog-exemple/dialog-exemple.compone
 })
 export class DialogComponent {
   valor: string;
+  animal: string ;
   constructor(public dialog: MatDialog){}
 
-  openDialog(valor: string){
+  openDialog(){
     let dialogRef = this.dialog.open(DialogExempleComponent, {
-      data: {valor: valor}});
-    dialogRef.afterOpened().subscribe(result => {
+      data: {valor: this.valor, animal: this.animal}});
+    dialogRef.afterClosed().subscribe(result => {
+      this.animal = result;
+      console.log(result.animal)
     });
   }
 

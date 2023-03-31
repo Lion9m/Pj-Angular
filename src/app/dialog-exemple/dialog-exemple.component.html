@@ -1,21 +1,9 @@
 <h2 mat-dialog-title>Dialog 2</h2>
-  <mat-form-field appearance="fill">
-    <mat-label>Já sabemos seu nome</mat-label>
-    <input matInput [(ngModel)]="data.valor">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Digite seu email</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Digite sua cidate</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Digite seu time</mat-label>
-    <input matInput>
-  </mat-form-field>
-<button mat-button mat-dialog-close>Close</button>
-<button mat-button color="primary" >Criar</button>
-<button mat-button color="primary" >Atualizar</button>
-<button mat-button color="primary" >Deletar</button>
+<p>{{data.valor}}</p>
+<mat-form-field>
+    <mat-label>Digite animal seu favorito</mat-label>
+    <input matInput [(ngModel)]="data.animal">
+</mat-form-field>
+<p>
+  <button mat-button color="primary" [mat-dialog-close]="data" >Salvar animal</button>
+</p>

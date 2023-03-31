@@ -9,7 +9,14 @@ import { Component, Inject } from '@angular/core';
 })
 
 export class DialogExempleComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(
+    public dialogRef: MatDialogRef<DialogExempleComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: {valor: string,animal:string},
+  ) {
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
 
   }
 }
